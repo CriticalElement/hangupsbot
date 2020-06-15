@@ -28,9 +28,8 @@ def easteregg(bot, event, easteregg, eggcount=1, period=0.5, conv_name='', *args
     conv_name = strip_quotes(conv_name)
     convs = [event.conv] if not conv_name or conv_name == '.' else bot.find_conversations(conv_name)
     for c in convs:
-        asyncio.async(
-            easteregg_combo(bot._client, c.id_, easteregg, int(eggcount), float(period))
-        ).add_done_callback(lambda future: future.result())
+        easteregg_combo(bot._client, c.id_, easteregg, int(eggcount), float(period))
+        add_done_callback(lambda future: future.result())
 
 
 @command.register
