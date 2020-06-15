@@ -87,9 +87,8 @@ class HangupsBot:
 
     def stop(self):
         """Disconnect from Hangouts"""
-        asyncio.async(
-            self._client.disconnect()
-        ).add_done_callback(lambda future: future.result())
+        self._client.disconnect()
+        add_done_callback(lambda future: future.result())
 
     def send_message(self, conversation, text):
         """Send simple chat message"""
@@ -102,9 +101,8 @@ class HangupsBot:
             return
         # XXX: Exception handling here is still a bit broken. Uncaught
         # exceptions in _on_message_sent will only be logged.
-        asyncio.async(
-            conversation.send_message(segments)
-        ).add_done_callback(self._on_message_sent)
+        conversation.send_message(segments)
+        add_done_callback(self._on_message_sent)
 
     @asyncio.coroutine
     def upload_images(self, links):
