@@ -87,3 +87,9 @@ If *admin* parameter is ``False`` (default), anyone can run the command.
 If *admin* is ``True``, only admins (as set in ``config.json``) can run it.
 
 See existing commands for examples.
+
+Other
+^^^^^
+
+
+This is a simple bugfix for python 3.8. This bugfix isn't great; use at your own caution.
