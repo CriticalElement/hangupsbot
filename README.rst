@@ -6,7 +6,7 @@ Bot for Google Hangouts -- Bugfix for Python 3.8
 Requirements
 ------------
 
-- Python >= 3.8
+- Python >= 3.8 (3.7?)
 - hangups (https://github.com/tdryer/hangups)
 - appdirs (https://github.com/ActiveState/appdirs)
 - asyncio (https://pypi.python.org/pypi/asyncio) for Python < 3.4
